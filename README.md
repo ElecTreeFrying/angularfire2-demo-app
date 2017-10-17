@@ -230,7 +230,7 @@ Create an account [firebase console][2-link].
     ```
 
 
-## Firebase Deploymeny
+## Firebase Deployment
 
 test
 
