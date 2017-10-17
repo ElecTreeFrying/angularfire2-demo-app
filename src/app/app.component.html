@@ -1,0 +1,20 @@
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-12 d-flex">
+      <div class="x-btn-container m-auto">
+        <button type="button" class="btn btn-primary m-3" (click)="onNavigate('auth')" disabled>Authentication</button>
+        <button type="button" class="btn btn-primary m-3" (click)="onNavigate('rtdb')">Realtime Database</button>
+        <button type="button" class="btn btn-primary m-3" (click)="onNavigate('firestore')" disabled>Firestore</button>
+        <button type="button" class="btn btn-primary m-3" (click)="onNavigate('storage')" disabled>Storage</button>
+        <button type="button" class="btn btn-primary m-3" (click)="onNavigate('hosting')" disabled>Hosting</button>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>
