@@ -238,7 +238,7 @@ test
 ## TODO
 
 *   [ ] Authentication
-*   [x] Realtime Database
+*   [x] ~~Realtime Database~~
 *   [ ] Firestore
 *   [ ] Storage
 *   [ ] Hosting
