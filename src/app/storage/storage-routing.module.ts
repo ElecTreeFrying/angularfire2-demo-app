@@ -8,6 +8,7 @@ import { RemoveComponent } from './remove/remove.component';
 
 const routes: Routes = [
   { path: '', component: StorageComponent, children: [
+    { path: '', component: UploadComponent },
     { path: 'upload', component: UploadComponent },
     { path: 'download', component: DownloadComponent },
     { path: 'remove', component: RemoveComponent }
