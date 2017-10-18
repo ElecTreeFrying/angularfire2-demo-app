@@ -6,7 +6,6 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HostingComponent } from './hosting/hosting.component';
 
 import { environment } from '../environments/environment';
 
@@ -15,8 +14,7 @@ const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HostingComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
