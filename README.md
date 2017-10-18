@@ -96,14 +96,14 @@ _**TODO**_
 [1-link]: https://workshop-demo-65669.firebaseapp.com
 [2-link]: https://console.firebase.google.com
 
-[rtdb]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/realtime-database
+[rtdb]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/realtime-database/realtime-database.md
 [rtdb-demo]: https://workshop-demo-65669.firebaseapp.com/rtdb
 
-[firestore]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/firestore
+[firestore]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/firestore/firestore.md
 [firestore-demo]: https://workshop-demo-65669.firebaseapp.com/firestore
 
-[auth]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/authentication
+[auth]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/authentication/authentication.md
 [auth-demo]: https://workshop-demo-65669.firebaseapp.com/auth
 
-[storage]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/storage
+[storage]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/storage/storage.md
 [storage-demo]: https://workshop-demo-65669.firebaseapp.com/storage
