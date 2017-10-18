@@ -10,6 +10,7 @@ import { QueryComponent } from './query/query.component';
 
 const routes: Routes = [
   { path: '', component: RealtimeDatabaseComponent, children: [
+    { path: '', component: CreateComponent },
     { path: 'create', component: CreateComponent },
     { path: 'read', component: ReadComponent },
     { path: 'update', component: UpdateComponent },
