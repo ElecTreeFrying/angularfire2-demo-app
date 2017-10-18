@@ -1,0 +1,24 @@
+<div class="d-flex">
+  <div class="m-auto">
+    <label>
+      <input type="file" class="form-control" (change)="onDetectFiles($event)" multiple>
+    </label>
+    <button type="button" class="btn btn-info" (click)="onUpload()">Upload</button>
+  </div>
+</div>
+
+
+<div class="row">
+  <div *ngFor="let upload of uploads | async">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+
+          <img src="{{ upload.url }}" alt="{{ upload.name }}" width="100"><br>
+          <strong>{{ upload.name }}</strong>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
