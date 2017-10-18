@@ -1,3 +1,7 @@
+@angular/forms@5.0.0-rc.2
+MIT
+MIT
+
 webpack@3.7.1
 MIT
 Copyright JS Foundation and other contributors
