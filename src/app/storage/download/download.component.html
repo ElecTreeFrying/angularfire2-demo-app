@@ -1,0 +1,16 @@
+<div class="row">
+  <div *ngFor="let upload of uploads | async">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+
+          <img src="{{ upload.url }}" alt="{{ upload.name }}" width="100"><br>
+          <strong>{{ upload.name }}</strong><br>
+
+          <button type="button" class="btn btn-success" (click)="onDownload(upload.url)">Download</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
