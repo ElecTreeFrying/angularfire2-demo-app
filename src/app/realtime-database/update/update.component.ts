@@ -38,13 +38,23 @@ export class UpdateComponent implements OnInit {
 
   // OBJECT
 
-  updateListWithSet(key: string, people: any): void {
-    const personSelected = this.personSelectedForm.value;
-    this.updateService.updateListWithSet(key, personSelected);
+  updateObjectWithSet(): void {
+    const people = this.personSelectedForm.value;
+    this.updateService.updateObjectWithSet = people;
+  }
+
+  updateObjectWithUpdate(): void {
+    const people = this.personSelectedForm.value;
+    this.updateService.updateObjectWithUpdate = people;
   }
 
 
   // LIST
+
+  updateListWithSet(key: string, people: any): void {
+    const personSelected = this.personSelectedForm.value;
+    this.updateService.updateListWithSet(key, personSelected);
+  }
 
   updateListWithUpdate(key: string, people: any): void {
     const personSelected = this.personSelectedForm.value;
