@@ -19,13 +19,7 @@ export class DownloadService {
   }
 
   set onDownload(url: string) {
-    var xhr = new XMLHttpRequest();
-    xhr.responseType = 'blob';
-    xhr.onload = function(event) {
-      var blob = xhr.response;
-    };
-    xhr.open('GET', url);
-    xhr.send();
+    window.open(url, '_blank')
   }
 
 }
