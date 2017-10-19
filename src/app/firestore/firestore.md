@@ -1,3 +1,5 @@
+## [DEMO][firestore-demo],  [REPO][firestore]
+
 # Usage
 
 *   `git clone https://github.com/ElecTreeFrying/angularfire2-api-showcase.git angularfire2-demo`
@@ -34,5 +36,10 @@ Create an account [firebase console][2-link].
 
 # TODO
 
+# TODO
+
+# TODO
+
 [2-link]: https://console.firebase.google.com
-    
+[firestore]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/firestore
+[firestore-demo]: https://workshop-demo-65669.firebaseapp.com/firestore
