@@ -1,3 +1,5 @@
+## [DEMO][rtdb-demo],  [REPO][rtdb]
+
 # Usage
 
 *   `git clone https://github.com/ElecTreeFrying/angularfire2-api-showcase.git angularfire2-demo`
@@ -180,3 +182,5 @@ queryLimitToLast(child: string, limit: number): Observable<AngularFireAction<Dat
 ```
 
 [2-link]: https://console.firebase.google.com
+[rtdb]: https://github.com/ElecTreeFrying/angularfire2-api-showcase/tree/master/src/app/realtime-database
+[rtdb-demo]: https://workshop-demo-65669.firebaseapp.com/rtdb
