@@ -19,16 +19,16 @@
             </div>
             <div class="col">
               <span><strong>name:</strong></span>
-              <input type="text" class="form-control" placeholder="{{ person?.name }}" formControlName="name">
+              <input type="text" class="form-control" value="{{ person?.name }}" formControlName="name" readonly>
               <span><strong>age:</strong></span>
-              <input type="text" class="form-control" placeholder="{{ person?.age }}" formControlName="age">
+              <input type="text" class="form-control" value="{{ person?.age }}" formControlName="age" readonly>
             </div>
 
             <div class="col">
               <span><strong>gender:</strong></span>
-              <input type="text" class="form-control" placeholder="{{ person?.gender }}" formControlName="gender">
+              <input type="text" class="form-control" value="{{ person?.gender }}" formControlName="gender" readonly>
               <span><strong>isActive:</strong></span>
-              <input type="text" class="form-control" placeholder="{{ person?.isActive }}" formControlName="isActive">
+              <input type="text" class="form-control" value="{{ person?.isActive }}" formControlName="isActive" readonly>
             </div>
           </div>
 
@@ -57,6 +57,7 @@
   <div class="col-12" *ngIf="!list">
 
     <h2>Lists</h2>
+    <p>Select one person card</p>
     <div *ngFor="let person of people | async">
 
       <div class="card" (click)="selectedPerson(person)">
