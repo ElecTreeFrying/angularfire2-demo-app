@@ -14,14 +14,11 @@ import { CreateService } from './create.service';
 export class CreateComponent implements OnInit {
 
   firebaseCreateForm: FormGroup;
-  people: Observable<any> | AngularFireObject<any> | AngularFireList<any>;
   list: boolean = true;
 
   constructor(private createService: CreateService) { }
 
   ngOnInit() {
-    this.people = this.createService.getObjectPeople;
-
     this.firebaseCreateForm = new FormGroup({
       'name': new FormControl(null),
       'age': new FormControl(null),
@@ -56,11 +53,6 @@ export class CreateComponent implements OnInit {
 
   listObjectOption(option: boolean): void {
     this.list = option;
-
-    this.people =
-      option === true
-        ? this.createService.personRef_list
-        : this.createService.getObjectPeople;
   }
 
 }
