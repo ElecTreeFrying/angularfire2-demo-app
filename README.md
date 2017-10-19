@@ -1,8 +1,9 @@
 # Angularfire2 API Showcase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.7
+**angularfire2** demo application showing the use cases of methods  in `angularfire2/auth`, `/database` and `/firestore`, _firebase storage_
 
-## DEMO - [angularfire2 api showcase][1-link]
+
+## DEMO - [angularfire2 demo-app][1-link]
 
 ## Features
 
@@ -10,11 +11,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 *   Realtime Database
 *   **Firestore** _(new)_
 *   Storage
-*   Hosting
 
 ### Authentication
 
 [DOC|Repo][auth]  / [Demo][auth-demo]
+
+`angularfire2/auth` API Showcase, visit the [repo][auth] for more details, **authentication** demo-app includes example code for firebase social media logins and email signin and signup and example code for managing users.
 
 *   Managing users
 *   Sign up social/email
@@ -26,6 +28,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [DOC|Repo][rtdb] / [Demo][rtdb-demo]
 
 Covers CRUD Operations in both **List** & **Objects**
+
+`angularfire2/database` API Showcase, visit the [repo][rtdb] for more details, **realtime-database** demo app includes example codes on how to write, read, update and delete documents in _**rt-db**_ using lists and objects, visit [demo-app][rtdb-demo] for more info.
+
 
 ##### APIs used
 
@@ -47,6 +52,8 @@ _**TODO**_
 ### Storage
 
 [DOC|Repo][storage] / [Demo][storage-demo]
+
+**firebase** `Storage` API Showcase, visit the [repo][storage] for more details, **firebase storage** demo app includes example codes on how to upload, download and remove files in  _**Storage**_, please visit [demo-app][storage-demo] for more info.
 
 *   Upload files
 *   Download files
@@ -88,7 +95,10 @@ Create an account [firebase console][2-link].
     ```
 
 
-## Firebase Deployment
+
+_**TODO**_
+
+_**TODO**_
 
 _**TODO**_
 
