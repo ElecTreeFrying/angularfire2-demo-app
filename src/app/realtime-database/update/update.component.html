@@ -6,6 +6,36 @@
 </div>
 
 <div class="row">
+  <div class="col-12" *ngIf="list">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="personSelectedForm">
+      <div class="card">
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col">
+              <span><strong>name:</strong></span>
+              <input type="text" class="form-control" placeholder="{{ (people | async)?.name }}" formControlName="name">
+              <span><strong>age:</strong></span>
+              <input type="text" class="form-control" placeholder="{{ (people | async)?.age }}" formControlName="age">
+            </div>
+
+            <div class="col">
+              <span><strong>gender:</strong></span>
+              <input type="text" class="form-control" placeholder="{{ (people | async)?.gender }}" formControlName="gender">
+              <span><strong>isActive:</strong></span>
+              <input type="text" class="form-control" placeholder="{{ (people | async)?.isActive }}" formControlName="isActive">
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-primary" (click)="updateObjectWithSet()">Object (set)</button>
+          <button type="button" class="btn btn-primary" (click)="updateObjectWithUpdate()">Object (update)</button>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
   <div class="col-12" *ngIf="!list">
 
     <h2>Selected</h2>
@@ -33,7 +63,6 @@
           </div>
 
           <button type="button" class="btn btn-primary" (click)="updateListWithUpdate(person.key, person)">List (update)</button>
-          <button type="button" class="btn btn-primary" (click)="updateListWithSet(person.key, person)">List (set)</button>
 
         </div>
       </div>
@@ -56,6 +85,7 @@
   <div class="col-12" *ngIf="!list">
 
     <h2>Lists</h2>
+    <p>Select one person card</p>
     <div *ngFor="let person of people | async">
 
       <div class="card" (click)="selectedPerson(person)">
