@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { AngularFireObject, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
@@ -13,26 +12,12 @@ import { DeleteService } from './delete.service';
 })
 export class DeleteComponent implements OnInit {
 
-  personSelectedForm: FormGroup;
   people: Observable<any> | AngularFireObject<any> | AngularFireList<any>;
-  person: {any};
   list: boolean = true;
 
   constructor(private deleteService: DeleteService) { }
 
   ngOnInit() {
-    this.people = this.deleteService.getObjectPeople;
-
-    this.personSelectedForm = new FormGroup({
-      'name': new FormControl(null),
-      'age': new FormControl(null),
-      'gender': new FormControl(null),
-      'isActive': new FormControl(null)
-    })
-  }
-
-  selectedPerson(person: {any}): void {
-    this.person = person;
   }
 
 

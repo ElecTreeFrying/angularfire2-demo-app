@@ -1,15 +1,19 @@
 <div class="row">
   <div class="col-12">
-
     <div class="row">
+
       <div class="col-3">
         <form [formGroup]="personOrderByForm">
           <div class="btn-group-vertical">
             <h2>Sort</h2>
-            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByKey">Order by key</button>
-            <hr>
-            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByValue()">Order by value</button>
-            <hr>
+
+            <!-- order by key -->
+            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByKey()">Order by key</button><hr>
+
+            <!-- order by value -->
+            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByValue()">Order by value</button><hr>
+
+            <!-- order by child -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -17,9 +21,11 @@
               <option>gender</option>
               <option>isActive</option>
             </select>
-            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByChild()">Order by Child</button>
-            <br>
+            <button type="button" class="btn btn-primary my-1" (click)="queryOrderByChild()">Order by Child</button><br>
+
             <h2>Filter</h2>
+
+            <!-- equal to -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -29,8 +35,9 @@
             </select>
             <span>Equal to</span>
             <input type="text" class="form-control" formControlName="equal">
-            <button type="button" class="btn btn-primary my-1" (click)="queryEqualTo()">Equal to</button>
-            <hr>
+            <button type="button" class="btn btn-primary my-1" (click)="queryEqualTo()">Equal to</button><hr>
+
+            <!-- start at -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -40,8 +47,9 @@
             </select>
             <span>Start at</span>
             <input type="number" class="form-control" formControlName="limit">
-            <button type="button" class="btn btn-primary my-1" (click)="queryStartAt()">Start at</button>
-            <hr>
+            <button type="button" class="btn btn-primary my-1" (click)="queryStartAt()">Start at</button><hr>
+
+            <!-- end at -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -51,8 +59,9 @@
             </select>
             <span>End at</span>
             <input type="number" class="form-control" formControlName="limit">
-            <button type="button" class="btn btn-primary my-1" (click)="queryEndAt()">End at</button>
-            <hr>
+            <button type="button" class="btn btn-primary my-1" (click)="queryEndAt()">End at</button><hr>
+
+            <!-- limit to first -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -62,8 +71,9 @@
             </select>
             <span>Limit to First</span>
             <input type="number" class="form-control" formControlName="limit">
-            <button type="button" class="btn btn-primary my-1" (click)="queryLimitToFirst()">Limit to First</button>
-            <hr>
+            <button type="button" class="btn btn-primary my-1" (click)="queryLimitToFirst()">Limit to First</button><hr>
+
+            <!-- limit to last -->
             <span>Order by</span>
             <select class="form-control" formControlName="child">
               <option>name</option>
@@ -77,6 +87,7 @@
           </div>
         </form>
       </div>
+
       <div class="col">
         <h2>Lists</h2>
         <div *ngFor="let person of people | async">
@@ -92,6 +103,7 @@
 
         </div>
       </div>
+
     </div>
   </div>
 </div>

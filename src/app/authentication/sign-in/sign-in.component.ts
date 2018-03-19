@@ -26,22 +26,13 @@ export class SignInComponent implements OnInit {
     const email = this.loginForm.value['email'];
     const password = this.loginForm.value['password'];
 
-    if (option === 'email') {
-      this.signInService.signInWithEmailAndPassword(email, password);
-    } else if (option === 'google') {
-      this.signInService.signInWithGoogle();
-    } else if (option === 'facebook') {
-      this.signInService.signInWithFacebook();
-    } else if (option === 'twitter') {
-      this.signInService.signInWithTwitter();
-    } else if (option === 'github') {
-      this.signInService.signInWithGithub();
-    } else if (option === 'anonymous') {
-      this.signInService.signInAnonymously();
-    } else {
-      throw new Error();
-    }
-
+    if (option === 'email') this.signInService.signInWithEmailAndPassword(email, password);
+    else if (option === 'google') this.signInService.signInWithGoogle();
+    else if (option === 'facebook') this.signInService.signInWithFacebook();
+    else if (option === 'twitter') this.signInService.signInWithTwitter();
+    else if (option === 'github') this.signInService.signInWithGithub();
+    else if (option === 'anonymous') this.signInService.signInAnonymously();
+    else throw new Error();
   }
 
 }

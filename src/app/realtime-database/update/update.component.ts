@@ -15,24 +15,18 @@ export class UpdateComponent implements OnInit {
 
   personSelectedForm: FormGroup;
   people: Observable<any> | AngularFireObject<any> | AngularFireList<any>;
-  person: {any};
+  person: { any };
   list: boolean = true;
 
   constructor(private updateService: UpdateService) { }
 
   ngOnInit() {
-    this.people = this.updateService.getObjectPeople;
-
     this.personSelectedForm = new FormGroup({
       'name': new FormControl(null),
       'age': new FormControl(null),
       'gender': new FormControl(null),
       'isActive': new FormControl(null)
     })
-  }
-
-  selectedPerson(person: {any}): void {
-    this.person = person;
   }
 
 
@@ -51,18 +45,22 @@ export class UpdateComponent implements OnInit {
 
   // LIST
 
-  updateListWithSet(key: string, people: any): void {
+  updateListWithSet(key: string): void {
     const personSelected = this.personSelectedForm.value;
     this.updateService.updateListWithSet(key, personSelected);
   }
 
-  updateListWithUpdate(key: string, people: any): void {
+  updateListWithUpdate(key: string): void {
     const personSelected = this.personSelectedForm.value;
     this.updateService.updateListWithUpdate(key, personSelected);
   }
 
 
   // HELPER
+
+  selectedPerson(person: {any}): void {
+    this.person = person;
+  }
 
   listObjectOption(option: boolean): void {
     this.list = option;

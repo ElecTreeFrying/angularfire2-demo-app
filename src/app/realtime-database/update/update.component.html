@@ -36,6 +36,7 @@
     </form>
 
   </div>
+
   <div class="col-12" *ngIf="!list">
 
     <h2>Selected</h2>
@@ -62,13 +63,15 @@
             </div>
           </div>
 
-          <button type="button" class="btn btn-primary" (click)="updateListWithUpdate(person.key, person)">List (update)</button>
+          <button type="button" class="btn btn-primary" (click)="updateListWithSet(person.key)">List (set)</button>
+          <button type="button" class="btn btn-primary" (click)="updateListWithUpdate(person.key)">List (update)</button>
 
         </div>
       </div>
     </form>
 
   </div>
+
   <div class="col-12" *ngIf="list">
 
     <h2>Object</h2>
@@ -82,6 +85,7 @@
     </div>
 
   </div>
+
   <div class="col-12" *ngIf="!list">
 
     <h2>Lists</h2>

@@ -15,4 +15,8 @@ export class ManageUsersComponent implements OnInit {
   ngOnInit() {
   }
 
+  authState(): void {
+    this.manageUsersService.authState();
+  }
+
 }

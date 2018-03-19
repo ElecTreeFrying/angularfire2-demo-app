@@ -14,7 +14,6 @@ import { QueryService } from './query.service';
 export class QueryComponent implements OnInit {
 
   personOrderByForm: FormGroup;
-
   people: Observable<any> | AngularFireObject<any> | AngularFireList<any>;
 
   constructor(private queryService: QueryService) { }

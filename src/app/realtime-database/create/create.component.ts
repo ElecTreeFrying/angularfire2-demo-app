@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { AngularFireObject, AngularFireList } from 'angularfire2/database';
-import { Observable } from 'rxjs/Observable'
 
 import { CreateService } from './create.service';
 

@@ -10,9 +10,10 @@ export class QueryService {
 
   personRef_list: AngularFireList<any>;
   child = new Subject<string>();
+  path = 'rtdb_query';
 
   constructor(private db: AngularFireDatabase) {
-    this.personRef_list = this.db.list<any>('rtdb_query');
+    this.personRef_list = this.db.list<any>(this.path);
   }
 
   get getListPeople(): Observable<AngularFireAction<DatabaseSnapshot>[]> {
@@ -25,7 +26,7 @@ export class QueryService {
   // SORTING
 
   get queryOrderByKey(): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByKey();
     });
 
@@ -33,7 +34,7 @@ export class QueryService {
   }
 
   get queryOrderByValue(): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByValue();
     });
 
@@ -41,7 +42,7 @@ export class QueryService {
   }
 
   queryOrderByChild(child: string): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
         return query.orderByChild(child);
     });
 
@@ -53,7 +54,7 @@ export class QueryService {
 
   queryEqualTo(child: string, equal: string): Observable<AngularFireAction<DatabaseSnapshot>[]> {
     const parsedEqual = this.parseEqual(equal);
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByChild(child).equalTo(parsedEqual);
     });
 
@@ -61,7 +62,7 @@ export class QueryService {
   }
 
   queryStartAt(child: string, start: number): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByChild(child).startAt(start);
     });
 
@@ -69,7 +70,7 @@ export class QueryService {
   }
 
   queryEndAt(child: string, end: number): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByChild(child).endAt(end);
     });
 
@@ -77,7 +78,7 @@ export class QueryService {
   }
 
   queryLimitToFirst(child: string, limit: number): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByChild(child).limitToFirst(limit);
     });
 
@@ -85,7 +86,7 @@ export class QueryService {
   }
 
   queryLimitToLast(child: string, limit: number): Observable<AngularFireAction<DatabaseSnapshot>[]> {
-    const list = this.db.list<any>('rtdb_query', (query: DatabaseReference) => {
+    const list = this.db.list<any>(this.path, (query: DatabaseReference) => {
       return query.orderByChild(child).limitToLast(limit);
     });
 
@@ -104,20 +105,9 @@ export class QueryService {
 
   private parseEqual(equal: string): boolean | number | string {
     let parsedEqual;
-
-    // if equal is a true return true likewise false, if not boolean return 'invalid'
-    parsedEqual =
-      equal !== 'true' ? equal !== 'false' ? 'invalid' : false : true;
-
-    // if parsedEqual === 'invalid'
-        // then check if equal is a number using Number(equal)
-        // TODO: CONTINUE ~~
-
-    parsedEqual =
-      parsedEqual === 'invalid' ? Number(equal) ? Number(equal) : 'invalid' : parsedEqual;
-                                              // return Number  | 'invalid' | previous value
-    return parsedEqual =
-      parsedEqual === 'invalid' ? String(equal) ? String(equal) : 'invalid' : parsedEqual;
+    parsedEqual = equal !== 'true' ? equal !== 'false' ? 'invalid' : false : true;
+    parsedEqual = parsedEqual === 'invalid' ? Number(equal) ? Number(equal) : 'invalid' : parsedEqual;
+    return parsedEqual = parsedEqual === 'invalid' ? String(equal) ? String(equal) : 'invalid' : parsedEqual;
   }
 
 }

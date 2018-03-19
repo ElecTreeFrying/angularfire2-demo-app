@@ -5,43 +5,10 @@
   </div>
 </div>
 
+
 <div class="row">
-  <div class="col-12" *ngIf="!list">
 
-    <h2>Selected</h2>
-    <form (ngSubmit)="onSubmit()" [formGroup]="personSelectedForm">
-      <div class="card">
-        <div class="card-body">
-
-          <div class="row">
-            <div class="col-12">
-              <span><strong>push id:</strong>{{ person?.key }}</span>
-            </div>
-            <div class="col">
-              <span><strong>name:</strong></span>
-              <input type="text" class="form-control" value="{{ person?.name }}" formControlName="name" readonly>
-              <span><strong>age:</strong></span>
-              <input type="text" class="form-control" value="{{ person?.age }}" formControlName="age" readonly>
-            </div>
-
-            <div class="col">
-              <span><strong>gender:</strong></span>
-              <input type="text" class="form-control" value="{{ person?.gender }}" formControlName="gender" readonly>
-              <span><strong>isActive:</strong></span>
-              <input type="text" class="form-control" value="{{ person?.isActive }}" formControlName="isActive" readonly>
-            </div>
-          </div>
-
-          <button type="button" class="btn btn-primary" (click)="deleteList()">List (remove) / entire list</button>
-          <button type="button" class="btn btn-primary" (click)="deleteListByKey(person.key)">List (remove) / by key</button>
-
-        </div>
-      </div>
-    </form>
-
-  </div>
   <div class="col-12" *ngIf="list">
-
     <h2>Object</h2>
     <div class="card">
       <div class="card-body">
@@ -49,26 +16,30 @@
         <span><strong>age:</strong> {{ (people | async)?.age + ' --/--' }}</span>
         <span><strong>gender:</strong> {{ (people | async)?.gender + ' --/--' }}</span>
         <span><strong>isActive:</strong> {{ (people | async)?.isActive + ' --/--' }}</span>
+        <span>
+          <button type="button" class="btn btn-primary" (click)="deleteObject()">Object ( remove )</button>
+        </span>
       </div>
     </div>
-    <button type="button" class="btn btn-primary" (click)="deleteObject()">Object ( remove )</button>
-
   </div>
-  <div class="col-12" *ngIf="!list">
 
+  <div class="col-12" *ngIf="!list">
     <h2>Lists</h2>
     <p>Select one person card</p>
+    <button type="button" class="btn btn-primary" (click)="deleteList()">List (remove) / entire list</button>
     <div *ngFor="let person of people | async">
-
-      <div class="card" (click)="selectedPerson(person)">
+      <div class="card">
         <div class="card-body">
           <span><strong>name:</strong> {{ person?.name + ' --/--' }}</span>
           <span><strong>age:</strong> {{ person?.age + ' --/--' }}</span>
           <span><strong>gender:</strong> {{ person?.gender + ' --/--' }}</span>
           <span><strong>isActive:</strong> {{ person?.isActive + ' --/--' }}</span>
+          <span>
+            <button type="button" class="btn btn-primary" (click)="deleteListByKey(person.key)">List (remove) / by key</button>
+          </span>
         </div>
       </div>
-
     </div>
   </div>
+
 </div>
