@@ -5,6 +5,8 @@
 
 ## DEMO - [angularfire2 demo-app][1-link]
 
+# Incomplete angularfire2-demo-app revamped [repo][https://github.com/ElecTreeFrying/demoshit], [demo][https://angularfire2-demo-app.firebaseapp.com/firestore/create]
+
 ## Features
 
 *   Authentication
