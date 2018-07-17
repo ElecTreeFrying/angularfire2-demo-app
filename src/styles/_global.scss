@@ -1,0 +1,55 @@
+html, body {
+  margin: 0;
+  color: antiquewhite;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(48, 48, 48);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: lighter;
+}
+
+*:focus, button:focus {
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrap {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fill-all {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 576px) {
+  .wrap {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrap {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrap {
+    max-width: 1140px;
+  }
+}
