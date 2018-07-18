@@ -9,26 +9,9 @@
 
 // STYLE CONFIGURATIONS
 @import '~bootstrap/scss/bootstrap.scss';
-// @import '~simplebar/dist/simplebar.css';
 
 
 // EXTERNAL STYLES
 
 // ** material2 styles { deeppurple-amber, indigo-pink, pink-bluegrey, purple-green }
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
-
-
-// ** material custom theme
-@import '~@angular/material/theming';
-@include mat-core();
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
-$dark-warn:    mat-palette($mat-deep-orange);
-
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-
-// ** initialize custom material2 theme
-// @include angular-material-theme($dark-theme);
-
-// ** initialize dark theme to mat-progress-bar
-// @include mat-progress-bar-theme($dark-theme);

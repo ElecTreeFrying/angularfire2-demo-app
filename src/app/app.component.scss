@@ -1,0 +1,93 @@
+[data-simplebar] {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#header {
+  position: fixed;
+  width: 100vw;
+  top: 0%;
+  z-index: 1;
+
+  .mat-toolbar {
+    padding-left: 30px;
+
+    > span {
+      cursor: pointer;
+    }
+  }
+}
+
+#wrapper {
+  position: absolute;
+  padding-top: 64px;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  > div:first-child {
+    flex: 0 1 250px;
+    margin: 30px 30px 0 30px;
+    user-select: none;
+    width: 250px;
+
+    position: fixed;
+    z-index: 2;
+
+
+    ul {
+      position: relative;
+      z-index: 2;
+      list-style-type: none;
+      padding: 0 6px;
+      margin: 0;
+      margin-bottom: -10px;
+      li {
+        margin-bottom: 5px;
+        cursor: pointer;
+      }
+      li:hover {
+        color: rgb(175, 175, 175);
+      }
+    }
+  }
+
+  > div:last-child {
+    flex: 1 1;
+    padding-left: 310px;
+
+    position: relative;
+    z-index: 1;
+
+    > #main {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 30px;
+
+      > .mat-card {
+        width: 250px;
+        height: 72px;
+        margin: 0 24px 24px 0;
+        user-select: none;
+        cursor: pointer;
+      }
+    }
+
+    > #content {
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
+}
