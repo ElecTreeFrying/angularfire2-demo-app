@@ -1,3 +1,45 @@
-<p>
-  read works!
-</p>
+<div id="wrapper">
+  <div>
+    <h2>Object</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+      <h4>Realtime database ( Object ) snapshot</h4>
+      <br>
+      <button mat-raised-button color="accent" (click)="objectValueChanges()">READ OBJECT USING ( VALUECHANGES )</button>
+      <button mat-raised-button color="accent" (click)="objectSnapshotChanges()">READ OBJECT USING ( SNAPSHOTCHANGES )</button>
+      <br>
+      <mat-card>
+        <mat-card-content>
+          <p><strong>Username:</strong> {{ ( object | async )?.username }}</p>
+          <p><strong>Password:</strong> {{ ( object | async )?.password }}</p>
+          <p><strong>Favaorite number:</strong> {{ ( object | async )?.number }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+
+  <div>
+    <h2>List</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <h4>Realtime database ( List ) snapshot</h4>
+    <br>
+    <button mat-raised-button color="accent" (click)="listValueChanges()">READ LIST COLLECTION WITH ( VALUECHANGES )</button>
+    <button mat-raised-button color="accent" (click)="listSnapshotChanges()">READ LIST COLLECTION WITH ( SNAPSHOTCHANGES )</button>
+    <br>
+    <div id="content">
+      <mat-card *ngFor="let item of list | async">
+        <mat-card-content>
+          <p><strong>Name:</strong> {{ item?.name }}</p>
+          <p><strong>Username:</strong> {{ item?.username }}</p>
+          <p><strong>Favaorite number:</strong> {{ item?.number }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

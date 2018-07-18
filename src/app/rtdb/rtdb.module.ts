@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RtdbRoutingModule } from './rtdb-routing.module';
 import {
-  MatCardModule
+  MatCardModule,
+  MatDividerModule,
+  MatButtonModule,
+  MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 
 import { RtdbComponent } from './component/rtdb.component';
@@ -11,13 +16,19 @@ import { ReadComponent } from './component/read/read.component';
 import { UpdateComponent } from './component/update/update.component';
 import { DeleteComponent } from './component/delete/delete.component';
 
-import { RtdbService } from './rtdb.service';
+import { CreateService } from './component/create/create.service';
+import { ReadService } from './component/read/read.service';
 
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RtdbRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   declarations: [
     RtdbComponent,
@@ -27,7 +38,8 @@ import { RtdbService } from './rtdb.service';
     DeleteComponent
   ],
   providers: [
-    RtdbService
+    CreateService,
+    ReadService
   ]
 })
 export class RtdbModule { }
