@@ -10,7 +10,7 @@ import { map, filter } from 'rxjs/operators';
 export class AuthComponent implements OnInit {
 
   isRouted: boolean = false;
-  card: string[] = [ 'Email and Password', 'Anonymously', 'Social Media', 'Sign out' ];
+  card: string[] = [ 'Email and Password', 'Anonymously', 'Social Media', 'Sign out', 'Update Email', 'Update Password', 'Update Profile' ];
 
   constructor(
     private router: Router,

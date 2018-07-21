@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   panel = [
     {
       header: 'Authentication',
-      list: [ 'Email and Password', 'Anonymously', 'Social media', 'Sign out' ],
+      list: [ 'Email and Password', 'Anonymously', 'Social media', 'Sign out', 'Update Email', 'Update Password', 'Update Profile' ],
       navigation: '/auth',
     },
     {
@@ -31,11 +31,6 @@ export class AppComponent implements OnInit {
       header: 'Firebase Storage',
       list: [ 'Upload File', 'Download File', 'Delete File' ],
       navigation: '/storage'
-    },
-    {
-      header: 'Firebase Hosting',
-      list: [ 'CLI', 'Build', 'Deploy', 'Monitor' ],
-      navigation: '/hosting'
     }
   ]
 
@@ -50,8 +45,8 @@ export class AppComponent implements OnInit {
     ).subscribe((url) => {
       this.isRouted = url.length > 1;
       this.isRouted
-        ? this.panel.length === 5 ? this.panel.splice(0, 0, { header: 'Home', list: [], navigation: '/' }) : 0
-        : this.panel.length === 6 ? this.panel.splice(0, 1) : 0;
+        ? this.panel.length === 4 ? this.panel.splice(0, 0, { header: 'Home', list: [], navigation: '/' }) : 0
+        : this.panel.length === 5 ? this.panel.splice(0, 1) : 0;
     });
   }
 

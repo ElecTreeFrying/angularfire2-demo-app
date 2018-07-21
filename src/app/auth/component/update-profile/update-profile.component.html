@@ -1,0 +1,61 @@
+<div id="wrapper">
+  <div>
+    <h2>Sign in with email and password</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+
+      <div>
+        <form [formGroup]="signinForm">
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="email">
+            <mat-error *ngIf="signinForm.get('email')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="password">
+            <mat-error *ngIf="signinForm.get('password')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button type="button" color="accent" (click)="signIn()">SIGN IN</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    <h2>New password</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+
+      <div>
+        <form [formGroup]="profileForm">
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Display name</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="displayName">
+            <mat-error *ngIf="profileForm.get('displayName')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Photo URL</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="photoURL">
+            <mat-error *ngIf="profileForm.get('photoURL')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button type="button" color="accent" (click)="updateProfile()">UPDATE PROFILE</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

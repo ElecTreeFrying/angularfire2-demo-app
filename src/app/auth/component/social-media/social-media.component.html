@@ -1,3 +1,30 @@
-<p>
-  social-media works!
-</p>
+<div id="wrapper">
+  <div>
+    <h2>Authenticate using Social Media account</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+      <div>
+
+        <button mat-icon-button (click)="onSocialAuth('facebook')"
+          [matTooltip]="'Authenticate with your Faceabook account'" [matTooltipPosition]="'below'"
+          id="facebook"><mat-icon fontSet="fontawesome" class="fab fa-facebook-f"></mat-icon></button>
+
+        <button mat-icon-button (click)="onSocialAuth('twitter')"
+          [matTooltip]="'Authenticate with your Twitter account'" [matTooltipPosition]="'below'"
+          id="twitter"><mat-icon fontSet="fontawesome" class="fab fa-twitter"></mat-icon></button>
+
+        <button mat-icon-button (click)="onSocialAuth('google')"
+          [matTooltip]="'Authenticate with your Google account'" [matTooltipPosition]="'below'"
+          id="google"><mat-icon fontSet="fontawesome" class="fab fa-google"></mat-icon></button>
+
+        <button mat-icon-button (click)="onSocialAuth('github')"
+          [matTooltip]="'Authenticate with your Github account'" [matTooltipPosition]="'below'"
+          id="github"><mat-icon fontSet="fontawesome" class="fab fa-github"></mat-icon></button>
+
+      </div>
+    </div>
+  </div>
+</div>

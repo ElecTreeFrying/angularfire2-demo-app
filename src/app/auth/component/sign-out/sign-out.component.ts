@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AuthService } from '../../auth.service';
+
 @Component({
   selector: 'app-sign-out',
   templateUrl: './sign-out.component.html',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignOutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  signOut() {
+    this.auth.signOut();
   }
 
 }
