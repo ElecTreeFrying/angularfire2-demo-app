@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { ReadService } from './read.service';
 
 @Component({
   selector: 'app-read',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadComponent implements OnInit {
 
-  constructor() { }
+  list: Observable<any[]>;
+
+  constructor(
+    private read: ReadService
+  ) { }
 
   ngOnInit() {
+    this.list = this.read.docValueChanges;
   }
+
+  valueChanges() {
+    this.list = this.read.docValueChanges;
+  }
+
+  snapshotChanges() {
+    this.list = this.read.docSnapshotChanges;
+  }
+
 
 }

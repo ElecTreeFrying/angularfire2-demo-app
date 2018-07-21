@@ -1,0 +1,37 @@
+#wrapper {
+
+  margin-bottom: 7vh;
+  margin-top: -10px;
+
+  .divider {
+    width: 80%;
+    margin-bottom: 3vh;
+  }
+
+  .mat-raised-button,
+  .mat-form-field {
+    width: 350px;
+  }
+
+  > div:last-child {
+
+    #content {
+      display: flex;
+
+      > div:First-child {
+        flex: 1 1 30%;
+      }
+
+      > div:last-child {
+        flex: 1 1 70%;
+        padding-left: 2vw;
+
+        .mat-card {
+          width: 350px;
+          margin-bottom: 2vh;
+        }
+      }
+    }
+  }
+
+}

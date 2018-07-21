@@ -1,3 +1,23 @@
-<p>
-  read works!
-</p>
+<div id="wrapper">
+  <div>
+    <h2>Read</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <h4>Cloud firestore database snapshot</h4>
+    <br>
+    <button mat-raised-button color="accent" (click)="valueChanges()">READ COLLECTION WITH ( VALUECHANGES )</button>
+    <button mat-raised-button color="accent" (click)="snapshotChanges()">READ COLLECTION WITH ( SNAPSHOTCHANGES )</button>
+    <br>
+    <div id="content">
+      <mat-card *ngFor="let item of list | async">
+        <mat-card-content>
+          <p><strong>Name:</strong> {{ item?.name }}</p>
+          <p><strong>Username:</strong> {{ item?.username }}</p>
+          <p><strong>Favaorite number:</strong> {{ item?.number }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

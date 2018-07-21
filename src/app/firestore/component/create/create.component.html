@@ -1,3 +1,49 @@
-<p>
-  create works!
-</p>
+<div id="wrapper">
+  <div>
+    <h2>Create</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+
+      <div>
+        <form [formGroup]="form">
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="username">
+            <mat-error *ngIf="form.get('username')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="password">
+            <mat-error *ngIf="form.get('password')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Favaorite number</mat-label>
+            <input matInput autocomplete="off" type="number" formControlName="number">
+            <mat-error *ngIf="form.get('number')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <button mat-raised-button color="accent" type="button" (click)="firestore()">PUSH DOCUMENT TO COLLECTION USING ( ADD )</button>
+        </form>
+      </div>
+
+      <div>
+        <h4>Cloud firestore database snapshot</h4>
+        <br><br>
+        <mat-card *ngFor="let item of list | async">
+          <mat-card-content>
+            <p><strong>Username:</strong> {{ item?.username }}</p>
+            <p><strong>Password:</strong> {{ item?.password }}</p>
+            <p><strong>Favaorite number:</strong> {{ item?.number }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+</div>
