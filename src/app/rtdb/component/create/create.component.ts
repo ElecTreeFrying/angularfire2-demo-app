@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
 import { CreateService } from './create.service';
-import { ReadService } from '../read/read.service';
 
 @Component({
   selector: 'app-create',
@@ -15,8 +14,8 @@ export class CreateComponent implements OnInit {
   objectForm: FormGroup;
   listForm: FormGroup;
 
-  object: any;
-  list: any;
+  object: Observable<any>;
+  list: Observable<any[]>;
 
   constructor(
     @Inject(FormBuilder) public fb: FormBuilder,

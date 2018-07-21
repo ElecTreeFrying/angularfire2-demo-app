@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RtdbRoutingModule } from './rtdb-routing.module';
 import {
+  MAT_CHECKBOX_CLICK_ACTION,
   MatCardModule,
   MatDividerModule,
   MatButtonModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 import { RtdbComponent } from './component/rtdb.component';
@@ -18,17 +20,21 @@ import { DeleteComponent } from './component/delete/delete.component';
 
 import { CreateService } from './component/create/create.service';
 import { ReadService } from './component/read/read.service';
+import { UpdateService } from './component/update/update.service';
+import { DeleteService } from './component/delete/delete.service';
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
     RtdbRoutingModule,
     MatCardModule,
     MatDividerModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
   declarations: [
     RtdbComponent,
@@ -38,8 +44,11 @@ import { ReadService } from './component/read/read.service';
     DeleteComponent
   ],
   providers: [
+    { provide: MAT_CHECKBOX_CLICK_ACTION, useValue: 'noop' },
     CreateService,
-    ReadService
+    ReadService,
+    UpdateService,
+    DeleteService
   ]
 })
 export class RtdbModule { }

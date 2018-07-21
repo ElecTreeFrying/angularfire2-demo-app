@@ -1,3 +1,104 @@
-<p>
-  delete works!
-</p>
+<div id="wrapper">
+  <div>
+    <span>( Delete )</span>
+    <h2>Object</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+
+      <div>
+        <form [formGroup]="objectForm">
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="username">
+            <mat-error *ngIf="objectForm.get('username')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="password">
+            <mat-error *ngIf="objectForm.get('password')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Favaorite number</mat-label>
+            <input matInput autocomplete="off" type="number" formControlName="number">
+            <mat-error *ngIf="objectForm.get('number')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+
+          <br>
+          <button mat-raised-button color="accent" type="button" (click)="deleteObject()">DELETE OBJECT USING ( REMOVE )</button>
+        </form>
+      </div>
+
+      <div>
+        <h4>Realtime database ( Object ) snapshot</h4>
+        <br><br>
+        <mat-card>
+          <mat-card-content>
+            <p><strong>Username:</strong> {{ ( object | async )?.username }}</p>
+            <p><strong>Password:</strong> {{ ( object | async )?.password }}</p>
+            <p><strong>Favaorite number:</strong> {{ ( object | async )?.number }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+
+  <div>
+    <span>( Delete )</span>
+    <h2>List</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+
+      <div>
+        <form [formGroup]="listForm">
+
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="username">
+            <mat-error *ngIf="listForm.get('username')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput autocomplete="off" type="text" formControlName="password">
+            <mat-error *ngIf="listForm.get('password')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field color="accent" appearance="outline">
+            <mat-label>Favaorite number</mat-label>
+            <input matInput autocomplete="off" type="number" formControlName="number">
+            <mat-error *ngIf="listForm.get('number')?.errors?.required">This is required.</mat-error>
+          </mat-form-field>
+
+          <br>
+          <button mat-raised-button color="accent" type="button" (click)="deleteList(true)">DELETE LIST DOCUMENT USING ( REMOVE )</button>
+          <br><br>
+          <button mat-raised-button color="accent" type="button" (click)="deleteList(false)">DELETE ENTIRE LIST USING ( REMOVE )</button>
+        </form>
+      </div>
+
+      <div>
+        <h4>Realtime database ( List ) snapshot</h4>
+        <br><br>
+        <mat-card *ngFor="let item of list | async">
+          <mat-card-content>
+            <mat-checkbox (click)="onCardSelect(item.pushID, item)" [checked]="item.pushID === pushID"></mat-checkbox>
+            <p><strong>Username:</strong> {{ item?.username }}</p>
+            <p><strong>Password:</strong> {{ item?.password }}</p>
+            <p><strong>Favaorite number:</strong> {{ item?.number }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+</div>

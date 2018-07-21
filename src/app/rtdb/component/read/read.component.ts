@@ -11,7 +11,7 @@ import { ReadService } from './read.service';
 export class ReadComponent implements OnInit {
 
   object: Observable<any>;
-  list: Observable<any>;
+  list: Observable<any[]>;
 
   constructor(
     private read: ReadService

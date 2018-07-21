@@ -11,8 +11,6 @@ import { ReadComponent } from './component/read/read.component';
 import { UpdateComponent } from './component/update/update.component';
 import { DeleteComponent } from './component/delete/delete.component';
 
-import { FirestoreService } from './firestore.service';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -27,7 +25,6 @@ import { FirestoreService } from './firestore.service';
     DeleteComponent
   ],
   providers: [
-    FirestoreService
   ]
 })
 export class FirestoreModule { }

@@ -67,6 +67,10 @@
     position: relative;
     z-index: 1;
 
+    > div {
+      margin-top: 30px;
+    }
+
     > #main {
       display: flex;
       flex-flow: row wrap;
@@ -74,7 +78,7 @@
       align-content: flex-start;
       align-items: flex-start;
       width: 100%;
-      margin-top: 30px;
+      margin-top: 0;
 
       > .mat-card {
         width: 250px;

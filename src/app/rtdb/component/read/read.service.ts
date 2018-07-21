@@ -22,32 +22,45 @@ export class ReadService {
   }
 
   get objectSnapshotChanges() {
+
     return this.objectRef.snapshotChanges().pipe(
+
       map((value: AngularFireAction<DatabaseSnapshot<any>>) => {
-        return { pushID: value.key, ...value.payload.toJSON() }
+
+        return {
+          pushID: value.key,
+          ...value.payload.toJSON()
+        };
       })
     )
+
   }
 
 
   // LIST
 
-  // VALUE CHANGES
-
   get listValueChanges() {
+
     return this.listRef.valueChanges();
+
   }
 
-  // SNAPSHOT CHANGES
-
   get listSnapshotChanges() {
+
     return this.listRef.snapshotChanges().pipe(
+
       map((values: any[]) => {
+
         return values.map((value: AngularFireAction<DatabaseSnapshot<any>>) => {
-          return { pushID: value.key, ...value.payload.toJSON() }
+
+          return {
+            pushID: value.key,
+            ...value.payload.toJSON()
+          };
         })
       })
     )
+
   }
 
 }
