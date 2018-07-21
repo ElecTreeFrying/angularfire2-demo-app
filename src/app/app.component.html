@@ -9,7 +9,7 @@
 
     <div>
       <mat-accordion displayMode="flat" multi="true">
-        <mat-expansion-panel #panel expanded
+        <mat-expansion-panel #panel expanded="true"
           *ngFor="let item of panel"
           [hideToggle]="item.list.length === 0 ? true : false"
           (click)="item.list.length === 0 ? panel.close() : 0">
