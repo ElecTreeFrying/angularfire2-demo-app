@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/angularfire2-demo-app",
     "ignore": [
       "firebase.json",
       "**/.*",

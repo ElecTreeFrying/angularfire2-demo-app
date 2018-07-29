@@ -48,7 +48,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 
 |                              | API                                |
 |------------------------------|------------------------------------|
-| Sign up (Email and password) | `createUserWithEmailAndPassword()` |                    
+| Sign up (Email and password) | [`createUserWithEmailAndPassword()`](#up) |                    
 | Sign in (Email and password) | `signInWithEmailAndPassword()`     |
 | Sign out                     | `signOut()`                        |
 | Social Media                 | `signInWithPopup()`                |
