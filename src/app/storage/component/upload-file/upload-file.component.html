@@ -1,3 +1,16 @@
-<p>
-  upload-file works!
-</p>
+<div id="wrapper">
+  <div>
+    <h2>Upload file</h2>
+    <div class="divider">
+      <mat-divider></mat-divider>
+    </div>
+
+    <div id="content">
+      <div>
+        <input type="file" (change)="onChange($event)">
+        <button mat-raised-button (click)="upload()" disabled>UPLOAD</button>
+      </div>
+
+    </div>
+  </div>
+</div>

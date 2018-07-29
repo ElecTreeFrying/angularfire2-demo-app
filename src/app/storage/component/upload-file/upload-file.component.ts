@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { StorageService } from '../../storage.service';
+
 @Component({
   selector: 'app-upload-file',
   templateUrl: './upload-file.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadFileComponent implements OnInit {
 
-  constructor() { }
+  file: File;
+
+  constructor(private storage: StorageService) { }
 
   ngOnInit() {
+  }
+
+  onChange(event: Event) {
+    this.file = event.target['files'][0];
+  }
+
+  upload() {
+    this.storage.uploadFile(this.file);
   }
 
 }

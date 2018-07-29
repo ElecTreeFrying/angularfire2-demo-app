@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StorageRoutingModule } from './storage-routing.module';
 import {
-  MatCardModule
+  MatCardModule,
+  MatDividerModule,
+  MatButtonModule,
+  MatIconModule,
 } from '@angular/material';
 
 import { StorageComponent } from './component/storage.component';
@@ -16,7 +19,10 @@ import { StorageService } from './storage.service';
   imports: [
     CommonModule,
     StorageRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   declarations: [
     StorageComponent,
